@@ -140,4 +140,56 @@ function allDone() {
 
         questionsDiv.appendChild(createP2);
     }
+ 
+    // Entering Initials
+ const createLabel = document.createElement("label");
+ createLabel.setAttribute("id", "createLabel");
+ createLabel.textContent = "Enter your initials: ";
 
+ questionsDiv.appendChild(createLabel);
+
+ // input
+ const createInput = document.createElement("input");
+ createInput.setAttribute("type", "text");
+ createInput.setAttribute("id", "initials");
+ createInput.textContent = "";
+
+ questionsDiv.appendChild(createInput);
+
+// submit
+const createSubmit = document.createElement("button");
+createSubmit.setAttribute("type", "submit");
+createSubmit.setAttribute("id", "Submit");
+createSubmit.textContent = "Submit";
+
+questionsDiv.appendChild(createSubmit);
+
+// Stores Initials and Scores
+createSubmit.addEventListener("click", function () {
+    var initials = createInput.value;
+
+    if (initials === null) {
+
+        console.log("No value entered!");
+
+    } else {
+        const finalScore = {
+            initials: initials,
+            score: timeRemaining
+        }
+        console.log(finalScore);
+        const allScores = localStorage.getItem("allScores");
+        if (allScores === null) {
+            allScores = [];
+        } else {
+            allScores = JSON.parse(allScores);
+        }
+        allScores.push(finalScore);
+        const newScore = JSON.stringify(allScores);
+        localStorage.setItem("allScores", newScore);
+        // Goes to High Scores page
+        window.location.replace("./scores.html");
+    }
+});
+
+}
