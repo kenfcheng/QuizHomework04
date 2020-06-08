@@ -1,4 +1,4 @@
-var questions = [
+let questions = [
     {
         question: "Which of the following is a valid type of function javascript supports?",
         choices: ["named function", "anonymous function", "none", "both"],
@@ -28,21 +28,21 @@ var questions = [
 ];
 
 // Variables
-var score = 0;
-var questionIndex = 0;
+const score = 0;
+const questionIndex = 0;
 
-var currentTime = document.querySelector("#currentTime");
-var timer = document.querySelector("#startTime");
-var questionsDiv = document.querySelector("#questionsDiv");
-var wrapper = document.querySelector("#wrapper");
+const currentTime = document.querySelector("#currentTime");
+const timer = document.querySelector("#startTime");
+const questionsDiv = document.querySelector("#questionsDiv");
+const wrapper = document.querySelector("#wrapper");
 
-var secondsLeft = 76;
+const secondsLeft = 76;
 // Time Intervals
-var holdInterval = 0;
+const holdInterval = 0;
 // Time Penalty
-var penalty = 10;
+const penalty = 10;
 //  new element
-var ulCreate = document.createElement("ul");
+const ulCreate = document.createElement("ul");
 
 // Timer and Display
 timer.addEventListener("click", function () {
@@ -68,14 +68,14 @@ function render(questionIndex) {
     ulCreate.innerHTML = "";
    
     for (var i = 0; i < questions.length; i++) {
-        var userQuestion = questions[questionIndex].title;
-        var userChoices = questions[questionIndex].choices;
+        const userQuestion = questions[questionIndex].title;
+        const userChoices = questions[questionIndex].choices;
         questionsDiv.textContent = userQuestion;
     }
 
      // New Question Choices
      userChoices.forEach(function (newItem) {
-        var listItem = document.createElement("li");
+        const listItem = document.createElement("li");
         listItem.textContent = newItem;
         questionsDiv.appendChild(ulCreate);
         ulCreate.appendChild(listItem);
@@ -84,11 +84,11 @@ function render(questionIndex) {
 }
 //Compares choices with answers
 function compare(event) {
-    var element = event.target;
+    const element = event.target;
 
     if (element.matches("li")) {
 
-        var createDiv = document.createElement("div");
+        const createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
        
         if (element.textContent == questions[questionIndex].answer) {score++;
@@ -113,3 +113,31 @@ function compare(event) {
     questionsDiv.appendChild(createDiv);
 
 }
+
+function allDone() {
+    questionsDiv.innerHTML = "";
+    currentTime.innerHTML = "";
+
+     // Heading
+     const createH1 = document.createElement("h1");
+     createH1.setAttribute("id", "createH1");
+     createH1.textContent = "Done!"
+ 
+     questionsDiv.appendChild(createH1);
+ 
+     // Paragraph
+     const createP = document.createElement("p");
+     createP.setAttribute("id", "createP");
+ 
+     questionsDiv.appendChild(createP);
+
+      //Time Remaining
+    if (secondsLeft >= 0) {
+        const timeRemaining = secondsLeft;
+        const createP2 = document.createElement("p");
+        clearInterval(holdInterval);
+        createP.textContent = "Final Score:" + timeRemaining;
+
+        questionsDiv.appendChild(createP2);
+    }
+
