@@ -36,9 +36,9 @@ const timer = document.querySelector("#startTime");
 const questionsDiv = document.querySelector("#questionsDiv");
 const wrapper = document.querySelector("#wrapper");
 
-const secondsLeft = 76;
+const secondsLeft = 60;
 // Time Intervals
-const holdInterval = 0;
+let holdInterval = 0;
 // Time Penalty
 const penalty = 10;
 //  new element
