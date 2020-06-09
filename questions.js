@@ -1,4 +1,4 @@
-let questions = [
+const askQuestions = [
     {
         question: "Which of the following is a valid type of function javascript supports?",
         choices: ["named function", "anonymous function", "none", "both"],
@@ -11,7 +11,7 @@ let questions = [
     },
     {
         question: "The external JavaScript file must contain <script> tag. True or False?",
-        choices: ["True", "False"],
+        choices: ["True","False"],
         answer: "False"
     },
     {
@@ -32,11 +32,11 @@ const score = 0;
 const questionIndex = 0;
 
 const currentTime = document.querySelector("#currentTime");
-const timer = document.querySelector("#startTime");
+let timer = document.querySelector("#startTime");
 const questionsDiv = document.querySelector("#questionsDiv");
 const wrapper = document.querySelector("#wrapper");
 
-const secondsLeft = 60;
+let secondsLeft = 60;
 // Time Intervals
 let holdInterval = 0;
 // Time Penalty
@@ -67,9 +67,9 @@ function render(questionIndex) {
     questionsDiv.innerHTML = "";
     ulCreate.innerHTML = "";
    
-    for (var i = 0; i < questions.length; i++) {
-        const userQuestion = questions[questionIndex].title;
-        const userChoices = questions[questionIndex].choices;
+    for (let i = 0; i < askQuestions.length; i++) {
+        const userQuestion = askQuestions[questionIndex].title;
+        const userChoices = askQuestions[questionIndex].choices;
         questionsDiv.textContent = userQuestion;
     }
 
@@ -166,19 +166,19 @@ questionsDiv.appendChild(createSubmit);
 
 // Stores Initials and Scores
 createSubmit.addEventListener("click", function () {
-    var initials = createInput.value;
+    const initials = createInput.value;
 
     if (initials === null) {
 
         console.log("No value entered!");
 
     } else {
-        const finalScore = {
+        let finalScore = {
             initials: initials,
             score: timeRemaining
         }
         console.log(finalScore);
-        const allScores = localStorage.getItem("allScores");
+        let allScores = localStorage.getItem("allScores");
         if (allScores === null) {
             allScores = [];
         } else {
