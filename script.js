@@ -1,4 +1,4 @@
-var askQuestions = [
+var questions = [
   {
     question:
       "Which of the following is a valid type of function javascript supports?",
@@ -70,9 +70,9 @@ function render(questionIndex) {
   questionsDiv.innerHTML = "";
   ulCreate.innerHTML = "";
 
-  for (var i = 0; i < askQuestions.length; i++) {
-    var userQuestion = askQuestions[questionIndex].title;
-    var userChoices = askQuestions[questionIndex].choices;
+  for (var i = 0; i < questions.length; i++) {
+    var userQuestion = questions[questionIndex].title;
+    var userChoices = questions[questionIndex].choices;
     questionsDiv.textContent = userQuestion;
   }
   // New Question Choices
@@ -87,11 +87,10 @@ function render(questionIndex) {
 //Compares choices with answers
 function compare(event) {
   var element = event.target;
+  const createDiv = document.createElement("div");
+  createDiv.setAttribute("id", "createDiv");
 
   if (element.matches("li")) {
-    const createDiv = document.createElement("div");
-    createDiv.setAttribute("id", "createDiv");
-
     if (element.textContent == questions[questionIndex].answer) {
       score++;
       createDiv.textContent =
