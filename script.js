@@ -101,6 +101,7 @@ function compare(event) {
       createDiv.textContent =
         "Wrong! The correct answer is:" + questions[questionIndex].answer;
     }
+
     // Tells You your score at the end
   }
   questionIndex++;
@@ -108,7 +109,7 @@ function compare(event) {
   if (questionIndex >= questions.length) {
     allDone();
     createDiv.textContent =
-      "End of quiz!" +
+      "All Done!" +
       " " +
       "You got  " +
       score +
@@ -192,7 +193,7 @@ function allDone() {
       allScores.push(finalScore);
       var newScore = JSON.stringify(allScores);
       localStorage.setItem("allScores", newScore);
-      // Goes to High Scores page
+      // ReDirects to Score Page
       window.location.replace("scores.html");
     }
   });
@@ -214,7 +215,7 @@ var allScores = localStorage.getItem("allScores");
 allScores = JSON.parse(allScores);
 
 if (allScores !== null) {
-  for (var i = 0; i < allScores.length; i++) {
+  for (let i = 0; i < allScores.length; i++) {
     var createLi = document.createElement("li");
     createLi.textContent = allScores[i].initials + " " + allScores[i].score;
     highScore.appendChild(createLi);
