@@ -14,7 +14,7 @@
     color: white;
 }
 #questionsDiv {
-    margin: 20px;
+    margin: 35px;
 }
 
 #currentTime {
@@ -23,12 +23,13 @@
 
 #goBack {
     background-color: turquoise;
+    
     position: relative;
     padding: 10px;
     font-size: 20px;
     color: white;
     top: 30%;
-    left: 55%;
+    left: 35%;
     width: auto;
     text-align: center;
     text-decoration: none;
@@ -43,7 +44,7 @@
     font-size: 20px;
     color: white;
     top: 30%;
-    right: 5%;
+    right: -10%;
     text-align: center;
 }
 
