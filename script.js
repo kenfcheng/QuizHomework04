@@ -71,7 +71,7 @@ function render(questionIndex) {
   ulCreate.innerHTML = "";
 
   for (var i = 0; i < questions.length; i++) {
-    var userQuestion = questions[questionIndex].title;
+    var userQuestion = questions[questionIndex].question;
     var userChoices = questions[questionIndex].choices;
     questionsDiv.textContent = userQuestion;
   }
