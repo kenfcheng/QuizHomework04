@@ -33,7 +33,7 @@ var askQuestions = [
 
 // Variables
 var score = 0;
-const questionIndex = 0;
+let questionIndex = 0;
 
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#startTime");
@@ -101,9 +101,9 @@ function compare(event) {
       createDiv.textContent =
         "Wrong! The correct answer is:" + questions[questionIndex].answer;
     }
-
-    // Tells You your score at the end
   }
+
+  // Tells You your score at the end
   questionIndex++;
 
   if (questionIndex >= questions.length) {
