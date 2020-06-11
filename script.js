@@ -45,7 +45,7 @@ let secondsLeft = 60;
 var holdInterval = 0;
 // Time Penalty
 var penalty = 10;
-//  new element
+//  Create element
 var ulCreate = document.createElement("ul");
 
 // Timer and Display
@@ -77,7 +77,7 @@ function render(questionIndex) {
   }
   // New Question Choices
   userChoices.forEach(function (newItem) {
-    var listItem = document.createElement("li");
+    let listItem = document.createElement("li");
     listItem.textContent = newItem;
     questionsDiv.appendChild(ulCreate);
     ulCreate.appendChild(listItem);
@@ -89,21 +89,21 @@ function compare(event) {
   var element = event.target;
 
   if (element.matches("li")) {
-    var createDiv = document.createElement("div");
+    const createDiv = document.createElement("div");
     createDiv.setAttribute("id", "createDiv");
 
     if (element.textContent == questions[questionIndex].answer) {
       score++;
       createDiv.textContent =
-        "Correct! The answer is:  " + questions[questionIndex].answer;
+        "Correct! The answer is:" + questions[questionIndex].answer;
     } else {
       secondsLeft = secondsLeft - penalty;
       createDiv.textContent =
-        "Wrong! The correct answer is:  " + questions[questionIndex].answer;
+        "Wrong! The correct answer is:" + questions[questionIndex].answer;
     }
   }
 
-  // Question Index
+  // Tells You your score at the end
   questionIndex++;
 
   if (questionIndex >= questions.length) {
