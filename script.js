@@ -33,7 +33,7 @@ var askQuestions = [
 
 // Variables
 var score = 0;
-var questionIndex = 0;
+const questionIndex = 0;
 
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#startTime");
@@ -70,14 +70,14 @@ function render(questionIndex) {
   questionsDiv.innerHTML = "";
   ulCreate.innerHTML = "";
 
-  for (let i = 0; i < askQuestions.length; i++) {
+  for (var i = 0; i < askQuestions.length; i++) {
     var userQuestion = askQuestions[questionIndex].title;
     var userChoices = askQuestions[questionIndex].choices;
     questionsDiv.textContent = userQuestion;
   }
   // New Question Choices
   userChoices.forEach(function (newItem) {
-    let listItem = document.createElement("li");
+    var listItem = document.createElement("li");
     listItem.textContent = newItem;
     questionsDiv.appendChild(ulCreate);
     ulCreate.appendChild(listItem);
@@ -101,9 +101,8 @@ function compare(event) {
       createDiv.textContent =
         "Wrong! The correct answer is:" + questions[questionIndex].answer;
     }
+    // Tells You your score at the end
   }
-
-  // Tells You your score at the end
   questionIndex++;
 
   if (questionIndex >= questions.length) {
@@ -201,9 +200,9 @@ function allDone() {
 // High Score Section
 
 // Declared variables
-var highScore = document.querySelector("#highScore");
-var clear = document.querySelector("#clear");
-var goBack = document.querySelector("#goBack");
+const highScore = document.querySelector("#highScore");
+const clear = document.querySelector("#clear");
+const goBack = document.querySelector("#goBack");
 
 // Event listener to clear scores
 clear.addEventListener("click", function () {
