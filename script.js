@@ -118,7 +118,7 @@ function compare(event) {
   } else {
     render(questionIndex);
   }
-  questionsDiv.appendChild(createDiv);
+  wrapper.appendChild(createDiv);
 }
 
 function allDone() {
