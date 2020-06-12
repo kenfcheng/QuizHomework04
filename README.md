@@ -11,4 +11,13 @@ Features in this assignment include:
 ~ There is also a button that will allow to clear score board.
 ~ Also a button that will take them back to beginning of quiz and they can restart.
 
-Published Site can be found here: https://github.com/kenfcheng/QuizHomework04.git
+Published Site can be found here: https://kenfcheng.github.io/QuizHomework04/
+
+Screenshots:
+![Start Quiz](https://user-images.githubusercontent.com/64857091/84515090-00685500-ac9a-11ea-9df9-8e3d395880ee.jpg)
+
+![Questions](https://user-images.githubusercontent.com/64857091/84515172-1bd36000-ac9a-11ea-84e7-9f8c36e3d595.jpg)
+
+![Results](https://user-images.githubusercontent.com/64857091/84515226-2d1c6c80-ac9a-11ea-8fc2-f20513bce9d2.jpg)
+
+![Score Page](https://user-images.githubusercontent.com/64857091/84515281-3efe0f80-ac9a-11ea-9c8c-21fdf9a9062a.jpg)
